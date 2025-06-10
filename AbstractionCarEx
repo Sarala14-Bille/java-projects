@@ -1,0 +1,31 @@
+package cscorner;
+
+
+ abstract class Cars {
+ abstract void start();
+ abstract void drive();
+ abstract void stop();
+}
+
+
+class DriverCar extends Cars {
+
+ void start() {
+     System.out.println("Car has started.");
+ }
+
+ void drive() {
+     System.out.println("Car is driving.");
+ }
+ void stop() {
+     System.out.println("Car has stopped.");
+ }
+}
+public class AbstractionCarEx {
+ public static void main(String[] args) {
+     Cars myCar = new DriverCar();
+     myCar.start();
+     myCar.drive();
+     myCar.stop();
+ }
+}
