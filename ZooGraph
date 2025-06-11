@@ -1,0 +1,31 @@
+package sarala.com;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+public class ZooGraph {
+	private Map<String, List<String>> graph;
+    public ZooGraph() {
+    	graph = new HashMap<>();
+		    }
+		    public void addConnection(String from, String to) {
+		        graph.putIfAbsent(from, new ArrayList<>());
+		        graph.get(from).add(to);
+		    }
+		    public void printGraph() {
+		        for (String zone : graph.keySet()) {
+		            System.out.println(zone + " connects to: " + graph.get(zone));
+		        }
+		    }
+		    public static void main(String[] args) {
+		        ZooGraph zoo = new ZooGraph();
+		        zoo.addConnection("Entrance", "Reptile House");
+		        zoo.addConnection("Entrance", "Bird Sanctuary");
+		        zoo.addConnection("Entrance", "Mammal Zone");
+		        zoo.addConnection("Reptile House", "Snake Pit");
+		        zoo.addConnection("Bird Sanctuary", "Parrot Pavilion");
+		        zoo.addConnection("Mammal Zone", "Lion Den");
+		        zoo.addConnection("Mammal Zone", "Elephant Enclosure");
+		        zoo.printGraph();
+		    }
+}
