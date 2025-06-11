@@ -1,0 +1,26 @@
+package cscorner;
+
+public class SortingHat {
+    public static void main(String[] args) {
+        // Array of student names
+        String[] students = {"Vyshu", "Saru", "Lucky", "Janu", "Chaitra"};
+
+        // Bubble sort to sort names alphabetically
+        for (int i = 0; i < students.length - 1; i++) {
+            for (int j = 0; j < students.length - i - 1; j++) {
+                if (students[j].compareTo(students[j + 1]) > 0) {
+                    // Swap names
+                    String temp = students[j];
+                    students[j] = students[j + 1];
+                    students[j + 1] = temp;
+                }
+            }
+        }
+
+        // Print sorted names
+        System.out.println("Sorted student names (Alphabetically):");
+        for (String name : students) {
+            System.out.println(name);
+        }
+    }
+}
