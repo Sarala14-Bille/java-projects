@@ -1,0 +1,16 @@
+package cscorner;
+
+import java.util.Stack;
+
+public class PlateStack {
+    public static void main(String[] args) {
+        Stack<String> plates = new Stack<>();
+        plates.push("Plate1");
+        plates.push("Plate2");
+        plates.push("Plate3");
+        System.out.println("Plates stacked: " + plates);
+        String usedPlate = plates.pop();
+        System.out.println("Someone used: " + usedPlate);
+        System.out.println("Plates left: " + plates);
+    }
+}
