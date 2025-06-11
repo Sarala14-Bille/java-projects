@@ -1,0 +1,27 @@
+package cscorner;
+
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class ProductSearch {
+
+	public static void main(String[] args) {
+		TreeSet<String> productnames =new TreeSet<String>();
+		productnames.add("Keyboard");
+		productnames.add("Mouse");
+		productnames.add("Monitor");
+		productnames.add("CPU");
+		productnames.add("Webacam");
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a product name to search:");
+		String searchproduct=sc.nextLine().toLowerCase();
+		if(productnames.contains(searchproduct)) {
+			System.out.println("Product \"" + searchproduct + "\" is available.");
+		}
+		else {
+			System.out.println("Product \"" + searchproduct + "\" is not available.");
+		}
+	}
+
+
+}
