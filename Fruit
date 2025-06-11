@@ -1,0 +1,17 @@
+package cscorner;
+
+import java.util.LinkedHashMap;
+
+public class Fruit {
+	
+	public static void main(String[] args) {
+		LinkedHashMap<Integer, String> dress=new LinkedHashMap<Integer, String>();
+		dress.put(1, "Anarkali");
+		dress.put(2, "kurtaset");
+		dress.put(3, "Lehanga");
+		dress.put(4, "Anarkali");
+		System.out.println(dress);
+		
+	}
+	
+}
