@@ -1,0 +1,122 @@
+package cscorner;
+
+class BinaryTree {
+    // Node definition
+    static class Node {
+        String name;
+        Node left, right;
+
+        Node(String name) {
+            this.name = name;
+            left = right = null;
+        }
+    }
+
+    Node root;
+
+    // Constructor to build a simple tree
+    public BinaryTree() {
+        root = new Node("mom");      
+        root.left = new Node("dad");  
+        root.right = new Node("you"); 
+    }
+
+    // Print root
+    void printRoot() {
+        if (root != null)
+            System.out.println("Root: " + root.name);
+        else
+            System.out.println("Tree is empty.");
+    }
+
+    // Print left and right children of a node
+    void printChildren(Node node) {
+        if (node == null) return;
+        System.out.println("Node: " + node.name);
+        System.out.println("  Left: " + (node.left != null ? node.left.name : "null"));
+        System.out.println("  Right: " + (node.right != null ? node.right.name : "null"));
+    }
+
+    // Count total nodes
+    int countNodes(Node node) {
+        if (node == null) return 0;
+        return 1 + countNodes(node.left) + countNodes(node.right);
+    }
+
+    // Count leaf nodes (no children)
+    int countLeaves(Node node) {
+        if (node == null) return 0;
+        if (node.left == null && node.right == null) return 1;
+        return countLeaves(node.left) + countLeaves(node.right);
+    }
+
+    // In-order traversal (Left, Root, Right)
+    void inOrder(Node node) {
+        if (node == null) return;
+        inOrder(node.left);
+        System.out.print(node.name + " ");
+        inOrder(node.right);
+    }
+
+    // Mirror the tree
+    Node mirror(Node node) {
+        if (node == null) return null;
+        Node temp = node.left;
+        node.left = mirror(node.right);
+        node.right = mirror(temp);
+        return node;
+    }
+
+    // Print all paths from root to leaf
+    void printPaths(Node node, String path) {
+        if (node == null) return;
+        path += node.name + " ";
+        if (node.left == null && node.right == null) {
+            System.out.println("Path: " + path);
+            return;
+        }
+        printPaths(node.left, path);
+        printPaths(node.right, path);
+    }
+
+    // Check if tree is empty
+    boolean isEmpty() {
+        return root == null;
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+
+        System.out.println("== Check if tree is empty ==");
+        System.out.println(tree.isEmpty() ? "Tree is empty" : "Tree is not empty");
+
+        System.out.println("\n== Print Root ==");
+        tree.printRoot();
+
+        System.out.println("\n== Print Children of Root ==");
+        tree.printChildren(tree.root);
+
+        System.out.println("\n== Traverse from top to bottom ==");
+        tree.printChildren(tree.root.left);
+        tree.printChildren(tree.root.right);
+
+        System.out.println("\n== Total number of nodes ==");
+        System.out.println(tree.countNodes(tree.root));
+
+        System.out.println("\n== Number of leaf nodes ==");
+        System.out.println(tree.countLeaves(tree.root));
+
+        System.out.println("\n== In-order Traversal ==");
+        tree.inOrder(tree.root);
+        System.out.println();
+
+        System.out.println("\n== Mirror the Tree ==");
+        tree.root = tree.mirror(tree.root);
+        tree.inOrder(tree.root);
+        System.out.println();
+
+        System.out.println("\n== All paths from root to leaves ==");
+        tree.printPaths(tree.root, "");
+    }
+}
