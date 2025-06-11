@@ -1,0 +1,32 @@
+package cscorner;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class CartoonChar {
+
+	public static void main(String[] args) {
+		ArrayList<String> cartoon=new ArrayList<String>();
+		cartoon.add("Doremon");
+		cartoon.add("Nobitha");
+		cartoon.add("Sizuka");
+		cartoon.add("Suneo");
+		cartoon.add("Jeon");
+		cartoon.remove(4);
+		int index = cartoon.indexOf("Suneo");
+        if (index != -1) {
+            cartoon.set(index, "Tom");
+        }
+        System.out.println("Cartoon Characters:");
+        for (String name : cartoon) {
+            System.out.println(name);
+        }
+        Collections.sort(cartoon);
+        System.out.println("\nSorted cartoon characters:");
+        for (String name : cartoon) {
+            System.out.println(name);
+        }
+        
+	}
+
+}
