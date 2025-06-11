@@ -1,0 +1,18 @@
+package vyshu;
+
+import java.util.*;
+
+public class TreeMapExample {
+
+	public static void main(String[] args) {
+		TreeMap<Integer,String> fruit = new TreeMap<Integer, String>();
+		fruit.put(01, "Apple");
+		fruit.put(02, "Banana");
+		fruit.put(03, "Citrus");
+		fruit.put(04, "Apple");
+		System.out.println(fruit);
+		
+
+	}
+
+}
