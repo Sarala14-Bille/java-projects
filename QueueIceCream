@@ -1,0 +1,26 @@
+package cscorner;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueIceCream {
+    public static void main(String[] args) {
+        Queue<String> iceCreamQueue = new LinkedList<>();
+
+        iceCreamQueue.add("Vyshu");
+        iceCreamQueue.add("Sarala");
+        iceCreamQueue.add("Lucky");
+        iceCreamQueue.add("Yashu");
+        iceCreamQueue.add("Durga");
+        System.out.println("First kid in the queue: " + iceCreamQueue.peek());
+
+        String servedKid = iceCreamQueue.poll();
+        System.out.println("Served: " + servedKid);
+        iceCreamQueue.add("Janu");
+        System.out.println("Ravi joined the queue.");
+        System.out.println("\nCurrent queue:");
+        for (String kid : iceCreamQueue) {
+            System.out.println(kid);
+        }
+    }
+}
