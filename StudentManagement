@@ -1,0 +1,38 @@
+package cscorner;
+
+import java.util.ArrayList;
+
+class Student {
+    String name;
+    int age;
+    int grade;
+
+    // Constructor
+    Student(String name, int age, int grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+}
+
+public class StudentManagement {
+    public static void main(String[] args) {
+        // Create an ArrayList to store Student objects
+        ArrayList<Student> studentList = new ArrayList<>();
+
+        // Add 5 students
+        studentList.add(new Student("Vyshu", 17, 85));
+        studentList.add(new Student("Saru", 16, 72));
+        studentList.add(new Student("Chaitra", 18, 90));
+        studentList.add(new Student("Janu", 17, 78));
+        studentList.add(new Student("Lucky", 16, 88));
+
+        // Print names of students with grade above 80
+        System.out.println("Students with grade above 80:");
+        for (Student s : studentList) {
+            if (s.grade > 80) {
+                System.out.println(s.name);
+            }
+        }
+    }
+}
