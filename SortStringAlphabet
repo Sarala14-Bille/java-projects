@@ -1,0 +1,16 @@
+package cscorner;
+
+import java.util.Arrays;
+
+public class SortStringAlphabet {
+
+	public static void main(String[] args) {
+		String input="vyshnavi";
+		System.out.println("Original string:"+input);
+		char[] characters=input.toCharArray();
+		Arrays.sort(characters);
+		String sorted=new String(characters);
+		System.out.println("Sorted String:"+sorted);
+	}
+
+}
