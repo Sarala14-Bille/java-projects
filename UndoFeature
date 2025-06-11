@@ -1,0 +1,25 @@
+package cscorner;
+
+import java.util.Stack;
+
+public class UndoFeature {
+
+	public static void main(String[] args) {
+		Stack<String> actionStack=new Stack<String>();
+		actionStack.push("Write");
+		actionStack.push("Write");
+		actionStack.push("Write");
+		 System.out.println("Last action (peek): " + actionStack.peek());
+
+	        // Undo 2 actions using pop
+	        System.out.println("Undo action: " + actionStack.pop());
+	        System.out.println("Undo action: " + actionStack.pop());
+
+	        // Show what's left in the stack
+	        System.out.println("\nActions left in stack:");
+	        for (String action : actionStack) {
+	            System.out.println(action);
+	        }
+	}
+
+}
