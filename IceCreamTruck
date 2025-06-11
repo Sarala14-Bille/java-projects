@@ -1,0 +1,23 @@
+package cscorner;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class IceCreamTruck {
+
+    public static void main(String[] args) {
+        Queue<String> kidsLine = new LinkedList<>();
+        kidsLine.add("Vyshu");
+        kidsLine.add("Saru");
+        kidsLine.add("Suppi");
+        kidsLine.add("Lucky");
+
+        System.out.println("Kids are waiting in line for ice cream...");
+        while (!kidsLine.isEmpty()) {
+            String kid = kidsLine.poll();
+            System.out.println(kid + " got their ice cream!");
+        }
+
+        System.out.println("All kids have been served. Ice cream truck is empty!");
+    }
+}
