@@ -1,0 +1,19 @@
+package cscorner;
+
+import java.util.Comparator;
+import java.util.TreeSet;
+
+public class EmployeeNameSorter {
+
+	public static void main(String[] args) {
+		TreeSet<String> employeename=new TreeSet<String>(Comparator.reverseOrder());
+		employeename.add("Sumit");
+		employeename.add("Karan");
+		employeename.add("Anjali");
+		employeename.add("Mohan");
+		employeename.add("Zoya");
+		System.out.println("Employee names in reverse alphabetical order:"+employeename);
+		
+	}
+
+}
