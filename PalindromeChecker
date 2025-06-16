@@ -1,0 +1,25 @@
+package cscorner;
+
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the user for a word
+        System.out.print("Enter a word: ");
+        String word = scanner.nextLine();
+
+        // Use StringBuilder to reverse the word
+        String reversed = new StringBuilder(word).reverse().toString();
+
+        // Check if the word is a palindrome
+        if (word.equalsIgnoreCase(reversed)) {
+            System.out.println(word + " is a palindrome.");
+        } else {
+            System.out.println(word + " is not a palindrome.");
+        }
+
+        scanner.close();
+    }
+}
