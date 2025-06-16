@@ -1,0 +1,21 @@
+package cscorner;
+
+public class FindMaxNumber {
+    public static void main(String[] args) {
+        // Store numbers in an array
+        int[] numbers = {15, 8, 32, 4, 27};
+
+        // Assume the first number is the maximum
+        int max = numbers[0];
+
+        // Loop to find the biggest number
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+
+        // Print the biggest number
+        System.out.println("The biggest number is: " + max);
+    }
+}
