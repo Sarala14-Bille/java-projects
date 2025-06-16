@@ -1,0 +1,54 @@
+package cscorner;
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}
+
+public class ReverseLinkedList {
+    public static ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+
+        while (current != null) {
+            ListNode nextNode = current.next; // store next
+            current.next = prev;              // reverse pointer
+            prev = current;                   // move prev forward
+            current = nextNode;               // move current forward
+        }
+
+        return prev; // new head
+    }
+
+    // Helper method to print the list
+    public static void printList(ListNode head) {
+        ListNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        // Creating linked list: 1 -> 2 -> 3 -> 4 -> 5
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+
+        System.out.print("Original List: ");
+        printList(head);
+
+        // Reverse the linked list
+        ListNode reversedHead = reverseList(head);
+
+        System.out.print("Reversed List: ");
+        printList(reversedHead);
+    }
+}
